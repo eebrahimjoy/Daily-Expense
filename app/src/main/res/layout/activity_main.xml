@@ -161,9 +161,16 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_marginBottom="30dp"
+            android:layout_height="wrap_content">
         </androidx.recyclerview.widget.RecyclerView>
 
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add_circle_black_24dp" />
 
 
     </LinearLayout>
