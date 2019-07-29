@@ -2,7 +2,7 @@ package com.example.dailyexpense.model;
 
 public class Expense {
     private String category;
-    private String amount;
+    private double amount;
     private String date;
     private String imageUrl;
 
@@ -10,7 +10,7 @@ public class Expense {
         this.category = category;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -26,12 +26,12 @@ public class Expense {
 
     }
 
-    public Expense(String category, String amount, String date) {
+    public Expense(String category, double amount, String date) {
         this.category = category;
         this.amount = amount;
         this.date = date;
     }
-    public Expense(String category, String amount, String date, String imageUrl) {
+    public Expense(String category, double amount, String date, String imageUrl) {
         this.category = category;
         this.amount = amount;
         this.date = date;
@@ -42,7 +42,7 @@ public class Expense {
         return category;
     }
 
-    public String getAmount() {
+    public double getAmount() {
         return amount;
     }
 

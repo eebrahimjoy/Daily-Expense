@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -17,11 +18,15 @@ import java.util.List;
 public class DailyExpenseAdapter extends RecyclerView.Adapter<DailyExpenseAdapter.ViewHolder> {
     private Context context;
     private List<Expense> expenses;
+    private TextView totalAmountTV;
+
+    private double amount = 0.0;
 
 
-    public DailyExpenseAdapter(Context context, List<Expense> expenses) {
+    public DailyExpenseAdapter(Context context, List<Expense> expenses, TextView totalAmountTV) {
         this.context = context;
         this.expenses = expenses;
+        this.totalAmountTV = totalAmountTV;
     }
 
     @NonNull
@@ -40,7 +45,12 @@ public class DailyExpenseAdapter extends RecyclerView.Adapter<DailyExpenseAdapte
 
         viewHolder.binding.expenseCatTV.setText(expense.getCategory());
         viewHolder.binding.dateTV.setText(expense.getDate());
-        viewHolder.binding.amountTV.setText(expense.getAmount());
+        viewHolder.binding.amountTV.setText(String.valueOf(expense.getAmount()));
+
+        for (Expense expense1 : expenses){
+            amount = amount + expense.getAmount();
+        }
+        totalAmountTV.setText(String.valueOf(amount));
 
 
     }
